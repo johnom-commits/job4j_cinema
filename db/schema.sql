@@ -1,13 +1,13 @@
 CREATE TABLE halls (
    id INTEGER PRIMARY KEY CHECK (id > 0),
-   client_id INTEGER,
+   client_id INTEGER UNIQUE,
    status INTEGER
 );
 
 CREATE TABLE accounts (
     id SERIAL PRIMARY KEY,
-    fio varchar(100) NOT NULL,
-    phone varchar(15)
+    fio varchar(100) NOT NULL UNIQUE,
+    phone varchar(15) UNIQUE
 );
 
 INSERT INTO halls (id, status) VALUES (1, 0);
